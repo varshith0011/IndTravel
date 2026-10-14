@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Namaste India – Tourist Super App</title>
+<style>
+:root{--bg:#fff8ee;--cd:#fff;--tx:#1d2433;--mu:#667085;--ac:#e8590c;--gr:#138808;--bd:#ecdfcc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161c;--cd:#1e222b;--tx:#eef0f4;--mu:#9aa3b2;--bd:#323846;--ac:#ff8a4c;--gr:#4cc16a}}
+:root[data-theme="dark"]{--bg:#14161c;--cd:#1e222b;--tx:#eef0f4;--mu:#9aa3b2;--bd:#323846;--ac:#ff8a4c;--gr:#4cc16a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:84px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--bd);z-index:5}
+header b{font-size:17px}main{max-width:720px;margin:auto;padding:12px 14px}
+h2{margin:6px 0 10px}h3{margin:18px 0 8px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--cd);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
+nav button{flex:1;border:0;background:none;color:var(--mu);padding:8px 0;font-size:11px;cursor:pointer}nav button span{display:block;font-size:20px}nav button.on{color:var(--ac);font-weight:700}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px;margin:8px 0}
+.sp{display:flex;justify-content:space-between;gap:8px;align-items:center}.mu{color:var(--mu);font-size:13px}
+.tag{font-size:11px;background:var(--bd);padding:2px 8px;border-radius:99px;white-space:nowrap}.ok{color:var(--gr);font-size:12px;font-weight:600}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--cd);color:var(--tx);font:inherit;margin:4px 0 8px}
+label{font-size:13px;color:var(--mu);display:block}label.in{display:inline-flex;gap:6px;align-items:center;width:auto}label.in input{width:auto;margin:0}
+.b,.b2{border:0;border-radius:10px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer;background:var(--ac);color:#fff}.b{width:100%}
+.b2{background:var(--bd);color:var(--tx)}.sm{padding:6px 10px;font-size:13px;margin-top:6px}button:disabled{opacity:.5}
+.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.row .b2{flex:0 0 auto;white-space:nowrap}
+.pills{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}.pill{border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:99px;padding:7px 13px;white-space:nowrap;cursor:pointer;font:inherit}.pill.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.big{font-size:22px;font-weight:700}.qty{display:flex;gap:10px;align-items:center}.qty button{width:32px;height:32px;border-radius:50%;border:1px solid var(--bd);background:var(--cd);color:var(--tx);font-size:18px;cursor:pointer}
+.md{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;justify-content:center;z-index:10}.md.on{display:flex}
+.md>div{background:var(--bg);width:100%;max-width:560px;max-height:88vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+#tk div{padding:4px 0;color:var(--mu)}#tk div.on{color:var(--gr);font-weight:600}
+.mic{width:84px;height:84px;border-radius:50%;border:0;background:var(--ac);color:#fff;font-size:34px;cursor:pointer;display:block;margin:10px auto}.mic.on{animation:p 1s infinite}@keyframes p{50%{box-shadow:0 0 0 14px #e8590c44}}
+#toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:9px 14px;border-radius:10px;display:none;z-index:20;max-width:90%;text-align:center}
+.bar{height:8px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gr)}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"><style>
+:root{--bg:#fbf6ee;--cd:#ffffffd9;--tx:#17142b;--mu:#6c6a80;--ac:#ff6b1a;--gr:#0b9d58;--bd:#17142b14;--sh:0 10px 30px -14px #2a1a5e55;--g:linear-gradient(135deg,#ff8a1f,#ff3d6e 60%,#7b3bff)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0a1a;--cd:#1a1730d9;--tx:#f4f1ff;--mu:#a7a3c4;--bd:#ffffff1a;--sh:0 12px 34px -14px #000;--gr:#3be08a;--ac:#ff8a4c}}
+:root[data-theme="dark"]{--bg:#0c0a1a;--cd:#1a1730d9;--tx:#f4f1ff;--mu:#a7a3c4;--bd:#ffffff1a;--sh:0 12px 34px -14px #000;--gr:#3be08a;--ac:#ff8a4c}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background-color:var(--bg);background-image:radial-gradient(60% 40% at 8% -5%,#ff8a1f33,transparent),radial-gradient(50% 40% at 100% 12%,#7b3bff2e,transparent),radial-gradient(50% 40% at 50% 110%,#19c37d22,transparent);background-attachment:fixed;padding-bottom:124px;-webkit-font-smoothing:antialiased}
+h2,h3,.big,.hero h1,.logo{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}h2{font-size:28px}h3{font-size:20px}
+header{background:color-mix(in srgb,var(--bg) 70%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);border-bottom:1px solid var(--bd)}
+.logo{display:flex;align-items:center;gap:9px;font-size:19px}.logo em{color:var(--ac)}.lm{font-style:normal;width:30px;height:30px;border-radius:10px;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:0 6px 14px -4px #ff3d6e99}
+.card{background:var(--cd);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--bd);border-radius:20px;box-shadow:var(--sh);padding:14px;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-3px);box-shadow:0 18px 36px -14px #2a1a5e66}
+.b,.b2{border-radius:14px;transition:transform .15s,box-shadow .25s}.b{background:var(--g);box-shadow:0 10px 22px -10px #ff3d6e;position:relative;overflow:hidden}.b:active,.b2:active{transform:scale(.96)}
+.b::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#fff6 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}.b:hover::after{transform:translateX(120%)}
+.b2{background:var(--cd);border:1px solid var(--bd);color:var(--tx)}
+input,select,textarea{border-radius:14px;background:var(--cd);transition:border-color .2s,box-shadow .2s}input:focus,select:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 4px #ff6b1a26}
+.pill{border-radius:99px;transition:.25s;font-weight:600}.pill.on{background:var(--g);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px #ff3d6e}
+.tag{background:linear-gradient(135deg,#ff8a1f22,#7b3bff22);color:var(--ac);font-weight:700}.ok{display:inline-block;background:#0b9d5818;padding:3px 10px;border-radius:99px;margin:4px 0}
+.big{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}.bar{height:10px}.bar i{background:var(--g);transition:width .6s}
+nav{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));max-width:560px;margin:auto;border-radius:28px;border:1px solid var(--bd);padding:6px;background:color-mix(in srgb,var(--cd) 85%,transparent);-webkit-backdrop-filter:blur(22px) saturate(1.8);backdrop-filter:blur(22px) saturate(1.8);box-shadow:0 22px 50px -16px #1a0b4a88;gap:2px}
+nav button{border-radius:22px;font-weight:700;transition:.3s;padding:7px 0}nav button span{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}nav button.on{background:var(--g);color:#fff;box-shadow:0 8px 18px -8px #ff3d6e}nav button.on span{transform:translateY(-2px) scale(1.2)}
+.hero{position:relative;height:300px;margin:4px 0 6px;border-radius:32px;overflow:hidden;color:#fff;background:linear-gradient(160deg,#2a1163,#a2297a 55%,#ff7a2f);box-shadow:0 30px 60px -26px #7b3bffcc}
+.hero svg{position:absolute;inset:0;width:100%;height:100%}.hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(transparent,#1b0a3d)}
+.ht{position:absolute;left:20px;top:20px;z-index:2}.hero h1{margin:12px 0 0;font-size:36px;line-height:1.02;text-shadow:0 4px 24px #0006}.chip{display:inline-block;background:#ffffff26;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid #fff4;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700}
+.sun{animation:fl 7s ease-in-out infinite}.mand{transform-origin:270px 150px;animation:sp 70s linear infinite}.tw circle{animation:tw 3s ease-in-out infinite}.tw circle:nth-child(2n){animation-delay:1.2s}.bd{animation:fl 5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}@keyframes sp{to{transform:rotate(360deg)}}@keyframes tw{50%{opacity:.15}}
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:-30px 10px 18px;position:relative;z-index:3}
+.qa button{border:1px solid var(--bd);background:color-mix(in srgb,var(--cd) 92%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:20px;padding:12px 4px;color:var(--tx);font:700 12px inherit;font-family:inherit;cursor:pointer;box-shadow:var(--sh);transition:transform .25s}.qa button:hover{transform:translateY(-4px)}.qa i{display:block;font-style:normal;font-size:26px;margin-bottom:2px}
+.ban{height:88px;border-radius:14px;margin:-2px 0 10px;display:grid;place-items:center;font-size:42px;position:relative;overflow:hidden;background:linear-gradient(135deg,hsl(var(--h) 85% 62%),hsl(calc(var(--h) + 55) 80% 46%))}.ban::after{content:'';position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(#fff6,transparent 70%);top:-60px;right:-30px}
+.md{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);background:#0b0720aa}.md>div{border-radius:30px 30px 0 0}.md.on>div{animation:sh .5s cubic-bezier(.2,1.1,.3,1)}.md>div::before{content:'';display:block;width:44px;height:5px;border-radius:9px;background:var(--bd);margin:-6px auto 14px}@keyframes sh{from{transform:translateY(60%);opacity:0}}
+.mic{background:var(--g);box-shadow:0 16px 36px -10px #ff3d6e}#toast{bottom:104px;background:var(--tx);color:var(--bg);border-radius:14px;font-weight:600}
+#v.enter>*{animation:up .6s cubic-bezier(.2,.8,.2,1) both}#v.enter>:nth-child(2){animation-delay:.06s}#v.enter>:nth-child(3){animation-delay:.12s}#v.enter>:nth-child(4){animation-delay:.18s}#v.enter>:nth-child(5){animation-delay:.24s}#v.enter>:nth-child(n+6){animation-delay:.3s}@keyframes up{from{opacity:0;transform:translateY(22px)}}
+.cf{position:fixed;top:-14px;width:8px;height:14px;border-radius:2px;z-index:30;pointer-events:none;animation:fall 2.3s ease-in forwards}@keyframes fall{to{transform:translate(var(--x),105vh) rotate(720deg);opacity:.8}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header><b class="logo"><i class="lm">N</i>Namaste <em>India</em></b><button class="b2 sm" style="margin:0" onclick="trips()">🎫 My Trips</button></header>
+<main id="v"></main>
+<nav>
+<button data-t="explore" onclick="nav('explore')"><span>🧭</span>Explore</button>
+<button data-t="travel" onclick="nav('travel')"><span>🚕</span>Travel</button>
+<button data-t="stay" onclick="nav('stay')"><span>🏨</span>Stay</button>
+<button data-t="food" onclick="nav('food')"><span>🍛</span>Food</button>
+<button data-t="money" onclick="nav('money')"><span>💱</span>Money</button>
+<button data-t="talk" onclick="nav('talk')"><span>🗣️</span>Talk</button>
+</nav>
+<div class="md" id="md" onclick="if(event.target===this)closeM()"><div id="mb"></div></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+let DB={book:[],bucket:[],rates:{}};
+try{DB=Object.assign(DB,JSON.parse(localStorage.getItem('ni')||'{}'))}catch(e){}
+const save=()=>{try{localStorage.setItem('ni',JSON.stringify(DB))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const R0={USD:84,EUR:91,GBP:108,AUD:55,CAD:61,AED:22.9,SGD:63,JPY:.56};
+const rate=c=>DB.rates[c]||R0[c];
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const usd=n=>'$'+(n/rate('USD')).toFixed(2);
+const opts=(a,s)=>a.map(x=>`<option${x==s?' selected':''}>${x}</option>`).join('');
+const C={Delhi:[28.61,77.21,'DL'],Jaipur:[26.91,75.79,'RJ'],Agra:[27.18,78.02,'UP'],Mumbai:[19.08,72.88,'MH'],Goa:[15.5,73.83,'GA'],Kochi:[9.93,76.27,'KL'],Varanasi:[25.32,83.0,'UP'],Hyderabad:[17.39,78.49,'TS'],Bengaluru:[12.97,77.59,'KA'],Chennai:[13.08,80.27,'TN'],Kolkata:[22.57,88.36,'WB']};
+const cities=Object.keys(C);
+const hav=(a,b,c,d)=>{const r=Math.PI/180,x=Math.sin((c-a)*r/2)**2+Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;return 12742*Math.asin(Math.sqrt(x))};
+const dist=(a,b)=>hav(C[a][0],C[a][1],C[b][0],C[b][1])*1.25;
+const hash=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
+const rng=s=>()=>(s=(s*1664525+1013904223)%4294967296)/4294967296;
+const today=()=>new Date().toISOString().slice(0,10);
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(toast.i);toast.i=setTimeout(()=>t.style.display='none',3200)};
+const M=h=>{$('#mb').innerHTML=h;$('#md').classList.add('on')};const closeM=()=>$('#md').classList.remove('on');
+const S={tab:'explore',city:'Delhi',tt:'Cab',r:0,veg:false,sp:'Medium',addr:'',dir:'en',lang:'Hindi'};let CART={},CK={},RES='';
+const P={Delhi:[['Red Fort','Heritage','Go early morning; closed Mondays',1],['India Gate','Landmark','Best at sunset, food stalls nearby'],['Humayun\'s Tomb','Heritage','Quiet, great for photos'],['Chandni Chowk','Street food','Try parathas; go by metro, avoid cars']],
+Jaipur:[['Amber Fort','Heritage','Reach before 9am to avoid crowds',1],['Hawa Mahal','Landmark','Best photographed in morning light'],['City Palace','Museum','Allow 2 hours'],['Nahargarh Fort','Sunset view','Trendy sunset spot with cafes']],
+Agra:[['Taj Mahal','Wonder of the World','Closed on Fridays; sunrise visit is best',1],['Agra Fort','Heritage','Combine with Taj in one day'],['Mehtab Bagh','Viewpoint','Taj view from across the river at sunset']],
+Mumbai:[['Gateway of India','Landmark','Ferry to Elephanta starts here'],['Marine Drive','Promenade','Evening walk'],['Elephanta Caves','Day trip','Ferry about 1 hour; closed Mondays'],['Colaba & Bandra cafes','Trendy','Street art and cafes']],
+Goa:[['Baga Beach','Beach','Lively; go north for nightlife'],['Basilica of Bom Jesus','Heritage','UNESCO church, Old Goa'],['Fort Aguada','Fort','Sea views at sunset'],['Palolem Beach','Trendy','Calm south Goa beach, silent discos']],
+Kochi:[['Chinese Fishing Nets','Landmark','Fort Kochi at sunset'],['Alleppey Backwaters','Day trip',"Book a houseboat or shared canoe",1],['Mattancherry Palace','Museum','Combine with Jew Town antiques']],
+Varanasi:[['Ganga Aarti','Spiritual','Evening ritual at Dashashwamedh Ghat; arrive 1 hour early',1],['Sarnath','Buddhist site','30 minutes from city'],['Sunrise Boat Ride','Experience','Book through your hotel at fixed price']],
+Hyderabad:[['Charminar','Landmark','Visit with Laad Bazaar bangles shopping'],['Golconda Fort','Fort','Light and sound show in the evening'],['Hyderabadi Biryani trail','Food','Try a local Irani cafe with chai']],
+Bengaluru:[['Lalbagh Botanical Garden','Garden','Morning walk'],['Bangalore Palace','Heritage','Tudor-style palace'],['Indiranagar & Koramangala','Trendy','Craft breweries and cafes']],
+Chennai:[['Marina Beach','Beach','Evening street food'],['Kapaleeshwarar Temple','Temple','Dress modestly; shoes off'],['Mahabalipuram','Day trip','UNESCO shore temples, 1.5 hours away']],
+Kolkata:[['Victoria Memorial','Museum','Gardens open until evening'],['Howrah Bridge','Landmark','Flower market at dawn'],['Park Street','Food','Cafes and colonial-era bakeries']]};
+const inB=t=>DB.bucket.some(x=>x.t==t);
+const pl=(c,i)=>{const p=P[c][i],t=p[0]+', '+c;return `<div class=card><div class=ban style="--h:${hash(p[0])%360}">${EM(p[1])}</div><div class=sp><b>${p[0]}${p[3]?' ⭐':''}</b><span class=tag>${p[1]}</span></div><div class=mu>${c} • ${p[2]}</div><button class="b2 sm" ${inB(t)?'disabled':''} onclick="addP('${c}',${i})">${inB(t)?'✔ In bucket list':'＋ Bucket list'}</button></div>`};
+const addP=(c,i)=>{DB.bucket.push({t:P[c][i][0]+', '+c,d:0});save();go();toast('Added to bucket list')};
+const V={},T={};
+V.explore=()=>{const c=S.city,n=DB.bucket.length,d=DB.bucket.filter(x=>x.d).length;
+const near=cities.filter(k=>k!=c).map(k=>[k,Math.round(dist(c,k))]).sort((a,b)=>a[1]-b[1]).slice(0,4);
+return `${hero()}<h2>Explore</h2><div class=row><select id=ec onchange="S.city=this.value;go()">${opts(cities,c)}</select><button class=b2 onclick=loc()>📍 Near me</button></div>
+<div class=card>👋 <b>First time in India?</b> <span class=mu>Carry a passport copy, use prepaid/metered taxis, and book trains early. Tourist helpline: <b>1363</b>.</span></div>
+<h3>Top places in ${c}</h3>${P[c].map((_,i)=>pl(c,i)).join('')}
+<h3>Nearby cities from ${c}</h3>${near.map(([k,km])=>`<div class="card sp"><span><b>${k}</b> <span class=mu>~${km} km by road</span></span><button class="b2 sm" onclick="S.city='${k}';go()">View</button></div>`).join('')}
+<h3>⭐ Must-visit in India</h3>${cities.flatMap(k=>P[k].map((p,i)=>p[3]?pl(k,i):'')).join('')}
+<h3>🪣 My bucket list (${d}/${n} done)</h3><div class=bar><i style="width:${n?d/n*100:0}%"></i></div>
+${DB.bucket.map((x,i)=>`<div class="card sp"><label class=in style="color:var(--tx)"><input type=checkbox ${x.d?'checked':''} onchange="tog(${i})"> <span style="${x.d?'text-decoration:line-through':''}">${esc(x.t)}</span></label><button class="b2 sm" style="margin:0" onclick="delB(${i})">✕</button></div>`).join('')||'<p class=mu>Nothing yet – tap “＋ Bucket list” on any place.</p>'}
+<div class=row><input id=bn placeholder="Add your own dream place"><button class=b2 onclick=addC()>Add</button></div>
+${n?'<button class=b2 onclick=cpy()>📋 Copy list to share</button>':''}`};
+const tog=i=>{DB.bucket[i].d^=1;save();go()},delB=i=>{DB.bucket.splice(i,1);save();go()};
+const addC=()=>{const v=$('#bn').value.trim();if(v.length<2)return toast('Type a place name');DB.bucket.push({t:v.slice(0,80),d:0});save();go()};
+const cpy=()=>{const t='My India bucket list:\n'+DB.bucket.map(x=>(x.d?'✅ ':'⬜ ')+x.t).join('\n');try{navigator.clipboard.writeText(t).then(()=>toast('Copied!'),()=>toast('Copy not allowed here'))}catch(e){toast('Copy not supported')}};
+const loc=()=>{if(!navigator.geolocation)return toast('Location not supported');navigator.geolocation.getCurrentPosition(p=>{let b=cities.map(k=>[k,hav(p.coords.latitude,p.coords.longitude,C[k][0],C[k][1])]).sort((a,b)=>a[1]-b[1])[0];S.city=b[0];go();toast(b[1]>300?`Nearest listed city: ${b[0]} (${Math.round(b[1])} km away)`:`Showing ${b[0]}`)},()=>toast('Location permission denied – pick a city manually'))};
+// ---------- TRAVEL ----------
+const IC={Cab:'🚕 Cab',Rent:'🛵 Rent',Train:'🚆 Train',Bus:'🚌 Bus',Flight:'✈️ Flight'};
+V.travel=()=>`<h2>Travel</h2><div class=pills>${Object.keys(IC).map(t=>`<button class="pill ${t==S.tt?'on':''}" onclick="S.tt='${t}';RES='';go()">${IC[t]}</button>`).join('')}</div>${T[S.tt]()}<div id=res>${RES}</div>`;
+T.Cab=()=>`<div class=card><label>Pickup point (hotel, airport, station)<input id=pk placeholder="e.g. IGI Airport T3"></label><label>City<select id=cf>${opts(cities,S.city)}</select></label><label>Destination<select id=ct><option>Local ride (same city)</option>${opts(cities.map(x=>x))}</select></label><label>Distance for local ride (km)<input id=ck type=number value=8 min=1 max=60></label><button class=b onclick=cab()>Find cabs</button></div>`;
+const CT=[['Auto','🛺',30,12,3],['Mini Cab','🚗',50,14,4],['Sedan','🚘',80,17,4],['SUV / Innova','🚙',120,22,6]];
+function cab(){const f=$('#cf').value,t=$('#ct').value,pk=$('#pk').value.trim();if(pk.length<3)return toast('Enter a pickup point');
+let km,loc=t.startsWith('Local');if(loc){km=Math.min(60,Math.max(1,+$('#ck').value||8))}else{if(t==f)return toast('Pick a different destination or choose Local ride');km=Math.round(dist(f,t))}
+CK.cab={f,t,km,pk};RES='<h3>Available cabs · '+km+' km</h3>'+CT.map((c,i)=>{const bad=c[0]=='Auto'&&km>60,fare=c[2]+km*c[3]+(km>150?300:0);
+return `<div class=card><div class=sp><b>${c[1]} ${c[0]}</b><span class=big>${inr(fare)}</span></div><div class=mu>${c[4]} seats • ETA ${3+(hash(c[0]+pk)%7)} min • ${usd(fare)}${km>150?' • incl. driver allowance':''} • tolls/parking extra</div><button class="b sm" ${bad?'disabled':''} onclick="cabBook(${i},${fare})">${bad?'Not available for long trips':'Book'}</button></div>`}).join('');go()}
+const cabBook=(i,fare)=>{const k=CK.cab;pay('cab',CT[i][0]+' • '+k.f+(k.t.startsWith('Local')?' local':' → '+k.t),`Pickup: ${k.pk} • ${k.km} km`,fare,C[k.f][2])};
+const RV=[['Honda Activa 6G','Scooter',500,3000],['Royal Enfield Classic 350','Motorcycle',1200,8000],['Maruti Swift','Hatchback',2200,10000],['Hyundai Creta','SUV',3500,15000],['Toyota Innova Crysta','MPV',4500,15000],['Mahindra Thar','4x4 SUV',4200,15000]];
+T.Rent=()=>`<div class=card><label>City<select id=rc>${opts(cities,S.city)}</select></label><div class=row><div><label>Pickup date<input id=rd type=date min="${today()}" value="${today()}"></label></div><div><label>Days<input id=rn type=number min=1 max=30 value=3></label></div></div><label class=in><input type=checkbox id=rv> With driver (+₹1,200/day, cars only)</label><br><label class=in><input type=checkbox id=rl> I carry my home licence + International Driving Permit (for self-drive)</label></div>
+${RV.map((v,i)=>`<div class=card><div class=sp><b>${v[0]}</b><span class=big>${inr(v[2])}<small>/day</small></span></div><div class=mu>${v[1]} • Refundable deposit ${inr(v[3])}</div><div class=ok>✔ RC verified ✔ Insurance ✔ Owner KYC ${i<2?'✔ 2 helmets':'✔ GPS tracked'}</div><button class="b sm" onclick="rent(${i})">Reserve</button></div>`).join('')}`;
+function rent(i){const v=RV[i],c=$('#rc').value,d=$('#rd').value,n=Math.min(30,Math.max(1,+$('#rn').value||1)),drv=$('#rv').checked&&i>1;
+if(!d||d<today())return toast('Choose a valid pickup date');if(!drv&&!$('#rl').checked)return toast('Self-drive needs licence + IDP (tick the box) or choose a driver');
+const t=n*(v[2]+(drv?1200:0));pay('rent',`${v[0]} • ${c}`,`${d} • ${n} day(s) • ${drv?'with driver':'self-drive'} • deposit ${inr(v[3])} at pickup`,t,c)}
+const TM={Train:{n:['Rajdhani Express','Vande Bharat','Shatabdi Express','Duronto Express','Superfast Express'],s:60,p:1.5,b:80},Bus:{n:['VRL Volvo AC','IntrCity SmartBus','KSRTC Airavat','Orange Sleeper AC','SRS Travels'],s:48,p:1.9,b:100},Flight:{n:['IndiGo','Air India','Akasa Air','SpiceJet','Air India Express'],s:650,p:4.2,b:2800}};
+const tf=m=>`<div class=card><div class=row><div><label>From<select id=tf>${opts(cities,S.city)}</select></label></div><div><label>To<select id=tt>${opts(cities,cities.find(c=>c!=S.city))}</select></label></div></div><div class=row><div><label>Date<input id=td type=date min="${today()}" value="${today()}"></label></div><div><label>Passengers<input id=tp type=number min=1 max=6 value=1></label></div></div><button class=b onclick="search('${m}')">Search ${m.toLowerCase()}s</button></div>`;
+T.Train=()=>tf('Train');T.Bus=()=>tf('Bus');T.Flight=()=>tf('Flight');
+const hm=m=>String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(Math.round(m%60)).padStart(2,'0');
+function search(m){const a=$('#tf').value,b=$('#tt').value,d=$('#td').value,pp=Math.min(6,Math.max(1,+$('#tp').value||1));if(a==b)return toast('From and To must differ');if(!d||d<today())return toast('Choose a valid date');
+const T0=TM[m],r=rng(hash(m+a+b+d)),km=dist(a,b)*(m=='Flight'?.8:1);
+const L=T0.n.map(n=>{const dep=(5+Math.floor(r()*17))*60+Math.floor(r()*12)*5,dur=km/T0.s*60+(m=='Flight'?90:0),price=T0.b+km*T0.p+r()*(m=='Flight'?1500:120);return{n,dep,dur,price,seats:2+Math.floor(r()*40)}}).sort((x,y)=>x.dep-y.dep);
+RES=`<h3>${m}s ${a} → ${b} · ${Math.round(km)} km</h3>`+L.map((x,i)=>{const arr=x.dep+x.dur,cl=m=='Train'?[['3A',1],['2A',1.45]]:[['Book',1]];
+return `<div class=card><div class=sp><b>${x.n}</b><span class=mu>${Math.floor(x.dur/60)}h ${Math.round(x.dur%60)}m</span></div><div class=big>${hm(x.dep)} → ${hm(arr)}${arr>=1440?'<small> +1d</small>':''}</div><div class=mu>${x.seats} seats left${m=='Train'?' • ask for Foreign Tourist Quota at major stations':''}</div>${cl.map(c=>{const p=Math.round(x.price*c[1]/10)*10*pp;return `<button class="b sm" style="width:auto;margin-right:6px" onclick="tbook('${m}','${x.n}','${a}','${b}','${d}','${hm(x.dep)}',${p},${pp},'${c[0]}')">${c[0]=='Book'?'Book':'Book '+c[0]} ${inr(p)}</button>`}).join('')}</div>`}).join('');go()}
+const tbook=(m,n,a,b,d,t,p,pp,cl)=>pay(m.toLowerCase(),`${n} • ${a} → ${b}`,`${d} ${t} • ${pp} passenger(s)${cl=='Book'?'':' • class '+cl}`,p,'');
+// ---------- STAY ----------
+const HT=[['Heritage Haveli','Hotel',5200,4.6],['Grand Palace Hotel','Hotel',7800,4.5],['Backpacker Hostel','Hostel',600,4.3],['City Budget Lodge','Lodge',1100,4.0],['Family Homestay','Homestay',1800,4.7],['Stay Express Inn','Hotel',2600,4.2]];
+const SF={c:'Delhi',n:2,g:2,t:'All'};
+V.stay=()=>{const r=rng(hash('H'+SF.c));const L=HT.filter(h=>SF.t=='All'||h[1]==SF.t).map(h=>({n:SF.c+' '+h[0],t:h[1],p:Math.round(h[2]*(.85+r()*.3)/50)*50,r:h[3]}));
+return `<h2>Hotels & lodges</h2><div class=card><div class=row><div><label>City<select onchange="SF.c=this.value;go()">${opts(cities,SF.c)}</select></label></div><div><label>Type<select onchange="SF.t=this.value;go()">${opts(['All','Hotel','Lodge','Hostel','Homestay'],SF.t)}</select></label></div></div><div class=row><div><label>Check-in<input id=hd type=date min="${today()}" value="${SF.d||today()}" onchange="SF.d=this.value"></label></div><div><label>Nights<input type=number min=1 max=30 value=${SF.n} onchange="SF.n=Math.min(30,Math.max(1,+this.value||1))"></label></div><div><label>Guests<input type=number min=1 max=8 value=${SF.g} onchange="SF.g=Math.min(8,Math.max(1,+this.value||1))"></label></div></div></div>
+${L.map(h=>{const rooms=h.t=='Hostel'?SF.g:Math.ceil(SF.g/2),tot=Math.round(h.p*SF.n*rooms*1.12);return `<div class=card><div class=sp><b>${h.n}</b><span class=tag>${h.t}</span></div><div class=mu>⭐ ${h.r} • ${inr(h.p)}/night ${h.t=='Hostel'?'per bed':'per room'} • ${rooms} ${h.t=='Hostel'?'bed(s)':'room(s)'}</div><div class=ok>✔ Verified ✔ Accepts foreign guests (Form C filed by property)</div><div class=sp><span class=big>${inr(tot)}</span><span class=mu>${usd(tot)} incl. ~12% est. tax</span></div><button class="b sm" onclick="stay('${h.n}',${tot})">Book</button></div>`}).join('')}`};
+const stay=(n,t)=>{const d=$('#hd').value;if(!d||d<today())return toast('Choose a valid check-in date');pay('hotel',n,`${d} • ${SF.n} night(s) • ${SF.g} guest(s) • check-in 12:00`,t,'')};
+// ---------- FOOD ----------
+const MENU={1:['Masala Dosa',120,1],2:['Idli Sambar (3)',80,1],3:['Paneer Butter Masala',260,1],4:['Butter Chicken',320,0],5:['Chicken Biryani',280,0],6:['Veg Thali',200,1],7:['Chole Bhature',150,1],8:['Masala Chai',30,1],9:['Gulab Jamun (2)',70,1],10:['Hyderabadi Veg Biryani',220,1],11:['Garlic Naan',50,1],12:['Mutton Rogan Josh',380,0]};
+const RS=[{n:'Spice Route Kitchen',c:'North Indian',m:[3,4,11,7,8,9,12],t:35,r:4.5},{n:'Tiffin Junction',c:'South Indian',m:[1,2,8,9,6],t:25,r:4.4},{n:'Biryani Darbar',c:'Biryani & Kebabs',m:[5,10,4,9,8],t:40,r:4.3},{n:'Annapurna Pure Veg',c:'Pure-veg thali',m:[6,3,7,11,8,9,1],t:30,r:4.6}];
+V.food=()=>{const r=RS[S.r],it=r.m.filter(i=>!S.veg||MENU[i][2]),cart=Object.entries(CART).filter(e=>e[1]>0),sub=cart.reduce((s,[i,q])=>s+MENU[i][1]*q,0),gst=sub*.05,tot=sub+gst+(sub?40:0);
+return `<h2>Order food</h2><div class=pills>${RS.map((x,i)=>`<button class="pill ${i==S.r?'on':''}" onclick="S.r=${i};CART={};go()">${x.n}</button>`).join('')}</div>
+<p class=mu>${r.c} • ⭐ ${r.r} • ~${r.t} min &nbsp; <label class=in><input type=checkbox ${S.veg?'checked':''} onchange="S.veg=this.checked;go()"> Veg only</label></p>
+${it.map(i=>{const m=MENU[i],q=CART[i]||0;return `<div class="card sp"><span><b>${m[2]?'🟢':'🔴'} ${m[0]}</b><br><span class=mu>${inr(m[1])}</span></span><span class=qty><button onclick="cq(${i},-1)">−</button><b>${q}</b><button onclick="cq(${i},1)">+</button></span></div>`}).join('')}
+${sub?`<div class=card><b>Your order</b>${cart.map(([i,q])=>`<div class=sp><span>${q} × ${MENU[i][0]}</span><span>${inr(MENU[i][1]*q)}</span></div>`).join('')}<div class="sp mu"><span>GST 5%</span><span>${inr(gst)}</span></div><div class="sp mu"><span>Delivery</span><span>₹40</span></div><div class="sp big"><span>Total</span><span>${inr(tot)}</span></div><div class=mu>${usd(tot)}</div>
+<label>Delivery address (hotel name + room)<input value="${esc(S.addr)}" oninput="S.addr=this.value"></label><label>Spice level<select onchange="S.sp=this.value">${opts(['Mild','Medium','Spicy'],S.sp)}</select></label><label>Allergies / notes<input id=fn placeholder="e.g. no nuts, no onion"></label>
+<button class=b onclick="order(${tot})">Place order</button></div>`:''}`};
+const cq=(i,d)=>{CART[i]=Math.max(0,(CART[i]||0)+d);go()};
+const order=t=>{if(S.addr.trim().length<5)return toast('Enter a full delivery address');const r=RS[S.r],n=($('#fn')||{}).value||'';pay('food',r.n,`${Object.entries(CART).filter(e=>e[1]>0).map(([i,q])=>q+'× '+MENU[i][0]).join(', ')} • ${S.sp} spice${n?' • '+n:''} • to ${S.addr}`,t,'')};
+// ---------- MONEY ----------
+V.money=()=>{const cs=Object.keys(R0);return `<h2>Currency converter</h2><div class=card><div class=row><input id=ma type=number min=0 value=${S.ma||100} oninput="S.ma=this.value;conv()"><select id=mc onchange="S.mc=this.value;go()">${opts(cs,S.mc||'USD')}</select></div>
+<div class=big id=mo></div><div class=mu id=mr></div><label>Today's rate (₹ per 1 ${S.mc||'USD'}) – check your bank/XE and edit<input id=mx type=number step=0.01 value=${rate(S.mc||'USD')} onchange="setR(this.value)"></label><p class=mu>Built-in rates are an offline snapshot (not live). Production: connect a forex API.</p></div>
+<h3>Typical costs in India</h3>${[['Masala chai',20],['Street-food snack',80],['Veg thali meal',200],['Auto ride, 3 km',80],['Metro ride',40],['Mid-range hotel/night',3000],['Taj Mahal-style monument ticket',1100]].map(x=>`<div class="card sp"><span>${x[0]}</span><span><b>${inr(x[1])}</b> <span class=mu>${usd(x[1])}</span></span></div>`).join('')}
+<h3>Money tips</h3><div class=card class=mu>• Exchange at banks/authorised dealers, not street changers.<br>• Keep ₹10, ₹20, ₹50 notes for tips and autos.<br>• Keep exchange receipts; ATMs may charge a fee per withdrawal.</div>`};
+const conv=()=>{const c=S.mc||'USD',a=+($('#ma').value)||0;$('#mo').textContent=inr(a*rate(c));$('#mr').textContent=`${a} ${c} = ${inr(a*rate(c))} · ₹${a} = ${(a/rate(c)).toFixed(2)} ${c}`};
+const setR=v=>{v=+v;if(!(v>0))return toast('Enter a valid rate');DB.rates[S.mc||'USD']=v;save();conv();toast('Rate updated')};
+// ---------- TALK ----------
+const PB=[['Hello','hello hi hey namaste greetings',['नमस्ते','నమస్కారం','வணக்கம்','ನಮಸ್ಕಾರ']],['Thank you','thank thanks',['धन्यवाद','ధన్యవాదాలు','நன்றி','ಧನ್ಯವಾದಗಳು']],['How much is this?','much cost price this how',['यह कितने का है?','ఇది ఎంత?','இது எவ்வளவு?','ಇದರ ಬೆಲೆ ಎಷ್ಟು?']],['Where is the toilet?','toilet restroom washroom bathroom',['शौचालय कहाँ है?','టాయిలెట్ ఎక్కడ ఉంది?','கழிப்பறை எங்கே இருக்கிறது?','ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ?']],['Please use the meter','meter fare taxi rickshaw',['कृपया मीटर चालू करें','దయచేసి మీటర్ వేయండి','தயவுசெய்து மீட்டர் போடுங்கள்','ದಯವಿಟ್ಟು ಮೀಟರ್ ಹಾಕಿ']],['I need help','help need emergency',['मुझे मदद चाहिए','నాకు సహాయం కావాలి','எனக்கு உதவி வேண்டும்','ನನಗೆ ಸಹಾಯ ಬೇಕು']],['Not spicy, please','spicy spice mild chilli',['कृपया कम मिर्च रखें','దయచేసి కారం తక్కువగా వేయండి','தயவுசெய்து காரம் குறைவாக போடுங்கள்','ದಯವಿಟ್ಟು ಖಾರ ಕಡಿಮೆ ಹಾಕಿ']],['Where is the railway station?','railway station train',['रेलवे स्टेशन कहाँ है?','రైల్వే స్టేషన్ ఎక్కడ ఉంది?','ரயில் நிலையம் எங்கே இருக்கிறது?','ರೈಲ್ವೇ ನಿಲ್ದಾಣ ಎಲ್ಲಿದೆ?']],['Water, please','water drink',['कृपया पानी दीजिए','దయచేసి నీళ్లు ఇవ్వండి','தயவுசெய்து தண்ணீர் கொடுங்கள்','ದಯವಿಟ್ಟು ನೀರು ಕೊಡಿ']],['Too expensive, reduce the price','expensive reduce discount cheaper bargain price',['यह बहुत महंगा है, कीमत कम कीजिए','ఇది చాలా ఖరీదు, ధర తగ్గించండి','இது மிகவும் விலை அதிகம், விலையை குறையுங்கள்','ಇದು ತುಂಬಾ ದುಬಾರಿ, ಬೆಲೆ ಕಡಿಮೆ ಮಾಡಿ']],['Take me to the hotel','take hotel drop',['मुझे होटल ले चलिए','నన్ను హోటల్‌కు తీసుకెళ్లండి','என்னை ஹோட்டலுக்கு அழைத்துச் செல்லுங்கள்','ನನ್ನನ್ನು ಹೋಟೆಲ್‌ಗೆ ಕರೆದುಕೊಂಡು ಹೋಗಿ']],['I am vegetarian','vegetarian veg vegan',['मैं शाकाहारी हूँ','నేను శాకాహారిని','நான் சைவம்','ನಾನು ಸಸ್ಯಾಹಾರಿ']]];
+const LG={Hindi:['hi-IN',0],Telugu:['te-IN',1],Tamil:['ta-IN',2],Kannada:['kn-IN',3]};let LAST='';
+V.talk=()=>`<h2>Live voice translator</h2><div class=card><div class=pills><button class="pill ${S.dir=='en'?'on':''}" onclick="S.dir='en';go()">English → Local</button><button class="pill ${S.dir=='lo'?'on':''}" onclick="S.dir='lo';go()">Local → English</button></div>
+<label>Local language<select onchange="S.lang=this.value;go()">${opts(Object.keys(LG),S.lang)}</select></label>
+<button class=mic id=mic onclick=mic()>🎤</button><div class="mu" style="text-align:center">Tap, speak ${S.dir=='en'?'in English':'in '+S.lang}</div>
+<label>…or type<input id=ti placeholder="${S.dir=='en'?'Where is the toilet?':'Type in '+S.lang}" onkeydown="if(event.key=='Enter')tr()"></label><button class=b onclick=tr()>Translate</button><div id=to></div></div>
+<h3>Quick phrases</h3><div class=pills style="flex-wrap:wrap">${PB.map((p,i)=>`<button class=pill onclick="q(${i})">${p[0]}</button>`).join('')}</div>
+<p class=mu>Voice input uses your browser (Chrome/Edge/Safari). Translation here is an offline 12-phrase phrasebook; production: connect a translation API.</p>
+<h3>🚨 Emergency numbers</h3><div class=card>National emergency <b>112</b> • Tourist helpline <b>1363</b> • Police <b>100</b> • Ambulance <b>102/108</b> • Women helpline <b>1091</b></div>`;
+const STOP='the a an is to of it me i am you can please'.split(' ');
+const wd=s=>s.toLowerCase().replace(/[^\p{L}\p{M}\s]/gu,'').split(/\s+/).filter(w=>w&&!STOP.includes(w));
+function show(p,toLocal){const li=LG[S.lang][1];LAST=toLocal?p[2][li]:p[0];$('#to').innerHTML=`<div class=card><div class=mu>${toLocal?'In '+S.lang:'In English'}</div><div class=big>${esc(LAST)}</div><div class=mu>${toLocal?esc(p[0]):esc(p[2][li])}</div><button class="b sm" onclick=spk()>🔊 Speak</button></div>`;if(toLocal)spk()}
+function tr(){const v=$('#ti').value.trim();if(!v)return toast('Say or type something first');const li=LG[S.lang][1],w=wd(v);let best=null,bs=0;
+PB.forEach(p=>{let s=0;if(S.dir=='en'){const k=(p[1]+' '+p[0]).toLowerCase().split(/\W+/);w.forEach(x=>{if(k.includes(x))s++})}else{const k=wd(p[2][li]);s=k.length?w.filter(x=>k.includes(x)).length/Math.max(k.length,w.length)*2:0}if(s>bs){bs=s;best=p}});
+if(!best||bs<(S.dir=='en'?1:1))$('#to').innerHTML=`<div class=card>Not in the offline phrasebook yet. Try the quick phrases below.</div>`;else show(best,S.dir=='en')}
+const q=i=>{show(PB[i],true)};
+function spk(){try{const u=new SpeechSynthesisUtterance(LAST);u.lang=S.dir=='en'?LG[S.lang][0]:'en-IN';speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){toast('Speech output not supported')}}
+function mic(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return toast('Voice input not supported in this browser – type instead');const r=new SR(),b=$('#mic');r.lang=S.dir=='en'?'en-IN':LG[S.lang][0];r.interimResults=true;
+r.onstart=()=>b.classList.add('on');r.onend=()=>b.classList.remove('on');r.onerror=e=>toast(e.error=='not-allowed'?'Microphone permission denied':'Mic error: '+e.error);
+r.onresult=e=>{const t=[...e.results].map(x=>x[0].transcript).join('');$('#ti').value=t;if(e.results[e.results.length-1].isFinal)tr()};try{r.start()}catch(e){toast('Could not start microphone')}}
+// ---------- CHECKOUT / TRIPS ----------
+function pay(type,title,detail,amt,extra){CK.o={type,title,detail,amt,extra};M(`<h3>Checkout</h3><p><b>${esc(title)}</b><br><span class=mu>${esc(detail)}</span></p><label>Full name (as on passport)<input id=cn autocomplete=name></label><label>Mobile / WhatsApp<input id=cp type=tel placeholder="+91…"></label><label>Pay with<select id=cm><option>UPI</option><option>Credit / Debit card</option><option>Pay at pickup / hotel</option></select></label><div class=big>${inr(amt)} <small class=mu>≈ ${usd(amt)}</small></div><p class=mu>Demo payment – no real money is charged. Passport/ID is never stored.</p><button class=b onclick=cf()>Confirm & pay</button>`)}
+const IL={cab:'Cab',rent:'Rental',train:'Train',bus:'Bus',flight:'Flight',hotel:'Stay',food:'Food'};
+function cf(){const n=$('#cn').value.trim(),p=$('#cp').value.trim(),o=CK.o;if(n.length<2)return toast('Enter your full name');if(!/^\+?[\d\s-]{8,15}$/.test(p))return toast('Enter a valid mobile number');
+const r=rng(hash(o.title+Date.now())),id='NI'+Math.floor(1e5+r()*9e5),L=()=>String.fromCharCode(65+Math.floor(r()*26));let x='';
+if(o.type=='cab')x=`Driver: ${['Ramesh','Suresh','Imran','Kiran'][Math.floor(r()*4)]} • ${o.extra} ${10+Math.floor(r()*80)} ${L()}${L()} ${1000+Math.floor(r()*9000)}<br>Share OTP <b>${1000+Math.floor(r()*9000)}</b> only at pickup.`;
+else if(o.type=='rent')x='Carry passport, visa, licence + IDP at pickup. Vehicle RC & insurance copy provided.';
+else if(['train','bus','flight'].includes(o.type))x=`PNR/Ticket <b>${Math.floor(1e9+r()*9e9)}</b><br>Carry original passport for ID check.`;
+else if(o.type=='hotel')x='Show passport & visa at check-in (Form C registration).';
+else x='<div id=tk></div>';
+DB.book.unshift({id,type:o.type,title:o.title,detail:o.detail,amt:o.amt,st:'Confirmed',at:new Date().toLocaleString()});save();
+confetti();M(`<h3>✅ Booking confirmed</h3><div class=card><b>${esc(o.title)}</b><br><span class=mu>${esc(o.detail)}</span><br>Ref: <b>${id}</b> • ${inr(o.amt)} via ${esc($('#cm').value)}<br>${x}</div><button class=b onclick=closeM()>Done</button>`);if(o.type=='food')track()}
+function track(){const st=['Order placed','Preparing','Out for delivery','Delivered'];let i=0;const d=()=>{const e=$('#tk');if(e)e.innerHTML=st.map((s,j)=>`<div class="${j<=i?'on':''}">${j<=i?'✔':'○'} ${s}</div>`).join('')};d();const iv=setInterval(()=>{if(!$('#tk')||++i>=st.length){clearInterval(iv);i=st.length-1;d();return}d()},3500)}
+function trips(){M(`<h3>🎫 My Trips</h3>${DB.book.map((b,i)=>`<div class=card><div class=sp><b>${IL[b.type]}: ${esc(b.title)}</b><span class=tag>${b.st}</span></div><div class=mu>${esc(b.detail)}<br>Ref ${b.id} • ${inr(b.amt)} • ${b.at}</div>${b.st=='Confirmed'&&b.type!='food'?`<button class="b2 sm" onclick="cancel(${i})">Cancel booking</button>`:''}</div>`).join('')||'<p class=mu>No bookings yet.</p>'}<button class=b onclick=closeM()>Close</button>`)}
+const cancel=i=>{DB.book[i].st='Cancelled';save();trips();toast('Cancelled – refund in 3–5 working days (demo)')};
+function go(){$('#v').innerHTML=V[S.tab]();document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t==S.tab));if(S.tab=='money')conv()}
+const EM=c=>/Fort|Heritage|Palace|Museum/.test(c)?'🏰':/Beach|Promenade/.test(c)?'🏖️':/Temple|Spiritual|Buddhist/.test(c)?'🛕':/Wonder/.test(c)?'🕌':/Food|Street/.test(c)?'🍜':/Garden|Viewpoint|Sunset|Day trip/.test(c)?'🌅':/Trendy|Landmark|Experience/.test(c)?'✨':'📍';
+const hero=()=>`<section class="hero"><svg viewBox="0 0 400 300" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><defs><radialGradient id="sg"><stop offset="0" stop-color="#fff3b0"/><stop offset=".55" stop-color="#ffb347"/><stop offset="1" stop-color="#ff6a3d"/></radialGradient></defs>
+<g class="mand" fill="none" stroke="#ffffff55">${Array.from({length:16},(_,i)=>`<ellipse cx="270" cy="150" rx="118" ry="20" transform="rotate(${i*11.25} 270 150)"/>`).join('')}</g>
+<circle class="sun" cx="270" cy="150" r="70" fill="url(#sg)"/>
+<g class="tw" fill="#fff"><circle cx="30" cy="120" r="1.6"/><circle cx="90" cy="170" r="1.2"/><circle cx="150" cy="90" r="1.6"/><circle cx="380" cy="60" r="1.5"/><circle cx="200" cy="40" r="1.2"/><circle cx="130" cy="200" r="1.4"/></g>
+<g class="bd" stroke="#ffffffcc" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M300 70q5-6 10 0q5-6 10 0"/><path d="M335 95q4-5 8 0q4-5 8 0"/></g>
+<g fill="#1b0a3d"><path d="M0 300V268Q45 238 90 268V300Z"/><path d="M370 300V272Q400 250 430 272V300Z"/><rect x="190" y="262" width="160" height="38"/><rect x="230" y="205" width="80" height="57"/><path d="M235 205Q270 135 305 205Z"/><rect x="269.2" y="154" width="1.6" height="18"/><path d="M230 205Q238 185 246 205Z"/><path d="M294 205Q302 185 310 205Z"/><rect x="178" y="185" width="9" height="115"/><path d="M176 185Q182.5 172 189 185Z"/><rect x="353" y="185" width="9" height="115"/><path d="M351 185Q357.5 172 364 185Z"/></g>
+<path d="M262 262V236Q270 222 278 236V262Z" fill="#4a2390"/></svg>
+<div class="ht"><span class="chip">✨ First time in India?</span><h1>Namaste,<br>traveller.</h1></div></section>
+<p class="mu" style="margin:12px 4px 30px">Cabs, stays, food, money &amp; a voice translator — everything for your trip.</p>
+<div class="qa">${[['🚕','Cab','travel','Cab'],['🛵','Rent','travel','Rent'],['🚆','Trains','travel','Train'],['🏨','Stay','stay'],['🍛','Food','food'],['🗣️','Translate','talk']].map(([e,l,t,k])=>`<button onclick="qa('${t}','${k||''}')"><i>${e}</i>${l}</button>`).join('')}</div>`;
+const qa=(t,k)=>{if(k){S.tt=k;RES=''}nav(t)};
+const confetti=()=>{for(let i=0;i<46;i++){const e=document.createElement('i');e.className='cf';e.style.cssText=`left:${Math.random()*100}vw;background:hsl(${Math.random()*360} 90% 60%);animation-delay:${Math.random()*.4}s;--x:${(Math.random()-.5)*160}px`;document.body.appendChild(e);setTimeout(()=>e.remove(),2800)}};
+const nav=t=>{S.tab=t;go();const v=$('#v');v.classList.remove('enter');void v.offsetWidth;v.classList.add('enter');scrollTo(0,0)};go();
+</script></body></html>
